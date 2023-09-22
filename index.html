@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stemmeteller</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/Web 1920 – 1.png" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ced2e054c6.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+    <!--Her ser du egen lagd logo på nettsiden-->
+    <img class="stemme-logo" src="images/Web 1920 – 1.png" alt="">
+    <!--Her ser du en innpakning som holder alt på nettsiden inni en border-->
+    <div class="package">
+        <div class="container">
+            <!--detter er klokkelsett som viser når valget ble endret sist-->
+            <div class="h4" id="date"><h1>Sist oppdatert</h1></div>
+            <!-- detter er en svart linje som deler klokkelsett of resten av content inni package.-->
+            <div class="line"></div>
+            <!--her ser du land og resultat supring-->
+            <div class="content-1">
+                <h1 class="land"> <i class="fa-solid fa-circle-dot" style="color: #ff0000;"></i>Direkte Norge</h1>
+                <h1 class="results">Resultat</h1>
+            </div>
+            <!--her ser du en innpakning for alle sirklene, buttons og parti navna.-->
+            <div class="circle-pack">
+                <div class="circle-1">
+                    <img src="images/Oslo_AP_Jonas Gahr Store.jpg" alt="">
+                    <h1>Arbeider Partiet</h1>
+                    <button class="ap_votes votes" onclick="ap_vote()">Stem</button>
+                </div>
+                <div class="circle-2">
+                    <img src="images/Akershus_MDG_Une Aina Bastholm.jpg" alt="">
+                    <h1>Miljø Partiet</h1>
+                    <button class="mdg_votes votes" onclick="mdg_vote()">Stem</button>
+                </div>
+                <div class="circle-3">
+                    <img src="images/Hordaland_H_Erna Solberg.jpg" alt="">
+                    <h1>Høyre</h1>
+                    <button class="h_votes votes" onclick="h_vote()">Stem</button>
+                </div>
+
+            </div>
+            <!-- her ser du en innpakning for antall stemmer og parti navna -->
+            <div class="stemmeteller-package">
+                <div class="stemmeteller">
+                    <h1 class="titel-stemmeteller">Stemmeteller</h1>
+                </div>
+                <div class="navn-counter">
+                    <div class="ap-nr">
+                        <h1 class="ap_name">AP</h1>
+                        <h2 id="count-el">0</h2>
+                    </div>
+                    <div class="mdg-nr">
+                        <h1 class="mdg_name">MDG</h1>
+                        <h2 id="count-el2">0</h2>
+                    </div>
+                    <div class="h-nr">
+                        <h1 class="h_name">Høyre</h1>
+                        <h2 id="count-el3">0</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- her ser du titel for grafen.-->
+            <h1 class="antall-stemmer">Antall stemmer grafisk</h1>
+            <!-- dette er en canvas som holder grafen.-->
+            <div class="resultat-pakke">
+                <canvas class="chart-index" id="myChart"></canvas>
+            </div>
+            <div class="reset_button_wrap">
+                <button class="reset_button" onclick="resets()">Resets</button>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- dette er "link" som linker js til html-->
+<script src="chart.js"></script>
+<script src="vote.js"></script>
+
+</html>
